@@ -440,15 +440,14 @@ Resources:
                 cd bin
                 cat > runner.sh << __EOF__
                 #!/bin/bash -x
-                SERVERS=(us1 us2 eu1 asia1)
+                SERVERS=(us-eth eth asia-eth)
                 while (true); do
                   PREFERRED_SERVER=\${!SERVERS[\${!RANDOM} % \${!#SERVERS[@]}]}
                   ./ethminer -U \
-                    -P stratums://${EthWallet}@\${!PREFERRED_SERVER}.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us2.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@eu1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@asia1.ethermine.org:5555 \
+                    -P stratums://${EthWallet}.aws@\${!PREFERRED_SERVER}.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@us-eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@asia-eth.2miners.com:2020 \
                   >> /tmp/ethminer.log 2>&1
                   sleep 1
                 done
@@ -473,15 +472,14 @@ Resources:
                 cd bin
                 cat > runner.sh << __EOF__
                 #!/bin/bash -x
-                SERVERS=(us1 us2 eu1 asia1)
+                SERVERS=(us-eth eth asia-eth)
                 while (true); do
                   PREFERRED_SERVER=\${!SERVERS[\${!RANDOM} % \${!#SERVERS[@]}]}
-                  ./ethminer -G \
-                    -P stratums://${EthWallet}@\${!PREFERRED_SERVER}.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us2.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@eu1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@asia1.ethermine.org:5555 \
+                  ./ethminer -U \
+                    -P stratums://${EthWallet}.aws@\${!PREFERRED_SERVER}.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@us-eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@asia-eth.2miners.com:2020 \
                   >> /tmp/ethminer.log 2>&1
                   sleep 1
                 done
@@ -506,15 +504,14 @@ Resources:
                 cd bin
                 cat > runner.sh << __EOF__
                 #!/bin/bash -x
-                SERVERS=(us1 us2 eu1 asia1)
+                SERVERS=(us-eth eth asia-eth)
                 while (true); do
                   PREFERRED_SERVER=\${!SERVERS[\${!RANDOM} % \${!#SERVERS[@]}]}
                   ./ethminer -U \
-                    -P stratums://${EthWallet}@\${!PREFERRED_SERVER}.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@us2.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@eu1.ethermine.org:5555 \
-                    -P stratums://${EthWallet}@asia1.ethermine.org:5555 \
+                    -P stratums://${EthWallet}.aws@\${!PREFERRED_SERVER}.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@us-eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@eth.2miners.com:2020 \
+                    -P stratums://${EthWallet}.aws@asia-eth.2miners.com:2020 \
                   >> /tmp/ethminer.log 2>&1
                   sleep 1
                 done
